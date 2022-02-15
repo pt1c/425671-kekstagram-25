@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
-* Студент: [Кирилл Савинов](https://up.htmlacademy.ru/javascript/25/user/425671).
-* Наставник: `Неизвестно`.
+- Студент: [Кирилл Савинов](https://up.htmlacademy.ru/javascript/25/user/425671).
+- Наставник: [Роман Макаров](https://htmlacademy.ru/profile/deepspiral).
 
 ---
 
