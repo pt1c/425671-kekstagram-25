@@ -1,12 +1,14 @@
 
-function getRandomInt(from, to){
-  if (from === to) {return from;}
-  if(to<from) {[from, to] = [to, from];}
+function getRandomInt(from, to) {
+  if (to < from) {
+    [from, to] = [to, from];
+  }
 
-  return Math.floor(Math.random() * to) + from;
+  return Math.floor(Math.random() * (to - from + 1) + from);
 }
 
-function checkMaxStringLength(inputString, maxLenght){
+
+function checkMaxStringLength(inputString, maxLenght) {
   return inputString.length <= maxLenght;
 }
 
