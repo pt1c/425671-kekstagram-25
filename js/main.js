@@ -29,9 +29,7 @@ const DESCRIPTIONS = [
   'Мы за мир!'
 ];
 
-const usedCommonIds = Array();
-const usedPhotoIds = Array();
-const usedCommentsIds = Array();
+const usedCommentsIds = [];
 
 const getRandomInt = (from, to) => {
   if (to < from) {
@@ -53,38 +51,42 @@ const getRandomUniqueId = (from, to, usedIds) => {
   }
 };
 
-const getRandomArrayValue = (inputArray) => inputArray[getRandomInt(1, inputArray.length-1)];
-const getRandomAvatar = () => `img/avatar-${ getRandomInt(1, 6) }.svg`;
+const getRandomArrayValue = (inputArray) => inputArray[getRandomInt(0, inputArray.length - 1)];
+const getRandomAvatar = () => `img/avatar-${getRandomInt(1, 6)}.svg`;
+const getRandomUniquePhoto = (usedPhotoIds) => `photos/${ getRandomUniqueId(1,25, usedPhotoIds) }.jpg`;
+const getRandomUniqueCommentId = () => getRandomUniqueId(1, 1000, usedCommentsIds);
 
 const generateComments = (amount) => {
-  const resultArray = Array();
+  const comments = [];
 
   for (let i = 0; i < amount; i++) {
-    resultArray[i] = {
-      id: getRandomUniqueId(1, 1000, usedCommentsIds),
+    comments.push({
+      id: getRandomUniqueCommentId(),
       avatar: getRandomAvatar(),
       message: getRandomArrayValue(MESSAGES),
       name: getRandomArrayValue(NAMES)
-    };
+    });
   }
 
-  return resultArray;
+  return comments;
 };
 
 const generatePosts = (amount) => {
-  const resultArray = Array();
+  const posts = [];
+  const usedCommonIds = [];
+  const usedPhotoIds = [];
 
   for (let i = 0; i < amount; i++) {
-    resultArray[i] = {
-      id: getRandomUniqueId(1,25, usedCommonIds),
-      url: `photos/${ getRandomUniqueId(1,25, usedPhotoIds) }.jpg`,
+    posts.push({
+      id: getRandomUniqueId(1, 25, usedCommonIds),
+      url: getRandomUniquePhoto(usedPhotoIds),
       description: getRandomArrayValue(DESCRIPTIONS),
       likes: getRandomInt(15, 200),
       comments: generateComments(getRandomInt(1, 5))
-    };
+    });
   }
 
-  return resultArray;
+  return posts;
 };
 
 
