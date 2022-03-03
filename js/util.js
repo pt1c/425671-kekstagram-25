@@ -8,4 +8,4 @@ const getRandomInt = (from, to) => {
 
 const checkMaxStringLength = (inputString, maxLenght) => inputString.length <= maxLenght;
 
-export {getRandomInt, checkMaxStringLength};
+export { getRandomInt, checkMaxStringLength };

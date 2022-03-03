@@ -1,4 +1,4 @@
-import {getRandomInt} from './util.js';
+import { getRandomInt } from './util.js';
 
 const MAX_TRIES = 1000000;
 
@@ -79,4 +79,4 @@ const generatePosts = (amount) => {
   return posts;
 };
 
-export {generatePosts};
+export { generatePosts };
