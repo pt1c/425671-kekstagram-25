@@ -9,6 +9,7 @@ const renderThumb = (data) => {
 
     const picture = element.querySelector('.picture__img');
     picture.src = post.url;
+    picture.dataset.photoId = post.id;
 
     const likes = element.querySelector('.picture__likes');
     likes.textContent = post.likes;
