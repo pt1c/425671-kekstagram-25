@@ -62,6 +62,7 @@ const renderFull = (data) => {
 
 bigPicture.querySelector('#picture-cancel').addEventListener('click', () => {
   toggleVisible();
+  document.removeEventListener('keydown', handleEscape);
 });
 
 export { renderFull };
