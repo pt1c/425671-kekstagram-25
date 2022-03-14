@@ -11,7 +11,6 @@ const handleEscape = (evt) => {
   if (evt.key === 'Escape') {
     toggleVisible('close');
   }
-  document.removeEventListener('keydown', handleEscape);
 };
 
 const renderComments = (comments) => {
@@ -53,7 +52,7 @@ const renderFull = (data) => {
       renderComments(clickedPost.comments);
 
       toggleVisible();
-      document.addEventListener('keydown', handleEscape);
+      document.addEventListener('keydown', handleEscape, { once: true });
 
       bigPicture.querySelector('.social__comment-count').classList.add('hidden');
       bigPicture.querySelector('.comments-loader').classList.add('hidden');
@@ -63,7 +62,6 @@ const renderFull = (data) => {
 
 bigPicture.querySelector('#picture-cancel').addEventListener('click', () => {
   toggleVisible();
-  document.removeEventListener('keydown', handleEscape);
 });
 
 export { renderFull };
