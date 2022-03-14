@@ -2,14 +2,16 @@
 const picture = document.querySelector('.pictures');
 const bigPicture = document.querySelector('.big-picture');
 
-const toggleVisible = (action) => {
-  if (action === 'open') {
-    bigPicture.classList.remove('hidden');
-    document.body.classList.add('modal-open');
-  } else {
-    bigPicture.classList.add('hidden');
-    document.body.classList.remove('modal-open');
+const toggleVisible = () => {
+  bigPicture.classList.toggle('hidden');
+  document.body.classList.toggle('modal-open');
+};
+
+const handleEscape = (evt) => {
+  if (evt.key === 'Escape') {
+    toggleVisible('close');
   }
+  document.removeEventListener('keydown', handleEscape);
 };
 
 const renderComments = (comments) => {
@@ -50,7 +52,8 @@ const renderFull = (data) => {
 
       renderComments(clickedPost.comments);
 
-      toggleVisible('open');
+      toggleVisible();
+      document.addEventListener('keydown', handleEscape);
 
       bigPicture.querySelector('.social__comment-count').classList.add('hidden');
       bigPicture.querySelector('.comments-loader').classList.add('hidden');
@@ -58,14 +61,9 @@ const renderFull = (data) => {
   });
 };
 
-document.addEventListener('keydown', (evt) => {
-  if (evt.key === 'Escape') {
-    toggleVisible('close');
-  }
-});
-
 bigPicture.querySelector('#picture-cancel').addEventListener('click', () => {
-  toggleVisible('close');
+  toggleVisible();
+  document.removeEventListener('keydown', handleEscape);
 });
 
 export { renderFull };
