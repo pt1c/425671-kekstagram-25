@@ -1,6 +1,5 @@
+import { MAX_TRIES } from './const.js';
 import { getRandomInt } from './util.js';
-
-const MAX_TRIES = 1000000;
 
 const NAMES = [
   'Кирилл',

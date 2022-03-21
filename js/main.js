@@ -1,8 +1,9 @@
+import { FAKE_POSTS } from './const.js';
 import { generatePosts } from './data.js';
 import { renderThumb } from './render-thumb.js';
 import { renderFull } from './render-full.js';
-
-const FAKE_POSTS = 25;
+import './formHandler.js';
+import './validation.js'; // based on Pristine
 
 const fakeData = generatePosts(FAKE_POSTS);
 renderThumb(fakeData);
