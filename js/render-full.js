@@ -1,17 +1,30 @@
+import { isEscapeKey } from './util.js';
+
 
 const picture = document.querySelector('.pictures');
 const bigPicture = document.querySelector('.big-picture');
+const closeButton = bigPicture.querySelector('#picture-cancel');
 
-const toggleVisible = () => {
-  bigPicture.classList.toggle('hidden');
-  document.body.classList.toggle('modal-open');
-};
-
-const handleEscape = (evt) => {
-  if (evt.key === 'Escape') {
-    toggleVisible('close');
+const onEscKeydown = (evt) => {
+  if (isEscapeKey(evt)) {
+    evt.preventDefault();
+    closeModal();
   }
 };
+
+closeButton.addEventListener('click', closeModal);
+
+function closeModal() {
+  bigPicture.classList.add('hidden');
+  document.body.classList.remove('modal-open');
+  document.removeEventListener('keydown', onEscKeydown);
+}
+
+function openModal() {
+  bigPicture.classList.remove('hidden');
+  document.body.classList.add('modal-open');
+  document.addEventListener('keydown', onEscKeydown);
+}
 
 const renderComments = (comments) => {
   const commentsElement = bigPicture.querySelector('.social__comments');
@@ -41,28 +54,25 @@ const renderComments = (comments) => {
 
 const renderFull = (data) => {
   picture.addEventListener('click', (evt) => {
-    if (evt.target.classList.contains('picture__img')) {
-      const clickedPost = data.find((post) => post.id === Number(evt.target.dataset.photoId));
-
-      bigPicture.querySelector('.big-picture__img').querySelector('img').src = clickedPost.url;
-      bigPicture.querySelector('.likes-count').textContent = clickedPost.likes;
-      bigPicture.querySelector('.comments-count').textContent = clickedPost.comments.length;
-      bigPicture.querySelector('.social__caption').textContent = clickedPost.description;
-
-      renderComments(clickedPost.comments);
-
-      toggleVisible();
-      document.addEventListener('keydown', handleEscape, { once: true });
-
-      bigPicture.querySelector('.social__comment-count').classList.add('hidden');
-      bigPicture.querySelector('.comments-loader').classList.add('hidden');
+    if (evt.target.dataset.photoId === undefined) {
+      return;
     }
+
+    const clickedPost = data.find((post) => post.id === Number(evt.target.dataset.photoId));
+
+    bigPicture.querySelector('.big-picture__img').querySelector('img').src = clickedPost.url;
+    bigPicture.querySelector('.likes-count').textContent = clickedPost.likes;
+    bigPicture.querySelector('.comments-count').textContent = clickedPost.comments.length;
+    bigPicture.querySelector('.social__caption').textContent = clickedPost.description;
+
+    renderComments(clickedPost.comments);
+
+    openModal();
+
+    bigPicture.querySelector('.social__comment-count').classList.add('hidden');
+    bigPicture.querySelector('.comments-loader').classList.add('hidden');
+
   });
 };
-
-bigPicture.querySelector('#picture-cancel').addEventListener('click', () => {
-  toggleVisible();
-  document.removeEventListener('keydown', handleEscape);
-});
 
 export { renderFull };

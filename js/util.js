@@ -8,4 +8,12 @@ const getRandomInt = (from, to) => {
 
 const checkMaxStringLength = (inputString, maxLenght) => inputString.length <= maxLenght;
 
-export { getRandomInt, checkMaxStringLength };
+const isEscapeKey = (evt) => evt.key === 'Escape';
+
+const stopEscapePropagation = (evt) => {
+  if (isEscapeKey(evt)) {
+    evt.stopPropagation();
+  }
+};
+
+export { getRandomInt, checkMaxStringLength, isEscapeKey, stopEscapePropagation };
