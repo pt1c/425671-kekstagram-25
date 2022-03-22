@@ -25,12 +25,12 @@ const validateHashtagsStartSymbol = (value) => (
 
 //строка после решётки должна состоять из букв и чисел и не может содержать пробелы, спецсимволы (#, @, $ и т. п.), символы пунктуации (тире, дефис, запятая и т. п.), эмодзи и т. д.;
 const validateHashtagsRegExp = (value) => (
-  breakStringToWords(value).every((hashtag) => (hashtag.match(HASHTAG_REGEX)))
+  breakStringToWords(value).every((hashtag) => (HASHTAG_REGEX.test(hashtag)))
 );
 
 //хеш-тег не может состоять только из одной решётки;
 const validateHashtagsOnlyHash = (value) => (
-  !(breakStringToWords(value).some((hashtag) => (hashtag.startsWith('#') && hashtag.length === 1)))
+  !(breakStringToWords(value).some((hashtag) => (hashtag === '#')))
 );
 
 // максимальная длина одного хэш-тега 20 символов, включая решётку;
@@ -41,7 +41,7 @@ const validateHashtagsLength = (value) => (
 // один и тот же хэш-тег не может быть использован дважды;
 const validateHashtagsUnique = (value) => {
   const hashtags = breakStringToWords(value);
-  return !(hashtags.some((hashtag, index) => hashtags.indexOf(hashtag) !== index));
+  return hashtags.length === new Set(hashtags).size;
 };
 
 // нельзя указать больше пяти хэш-тегов;
@@ -72,9 +72,8 @@ pristine.addValidator(textHashtags, validateHashtagsUnique, 'У вас хэш-т
 pristine.addValidator(textHashtags, validateHashtagsNumber, `Слишком много хэш-тегов. (Не больше ${HASHTAG_MAX_NUMBER})`);
 pristine.addValidator(textDescription, validateCommentSymbols, `Максимальное количество символов в комментарии = ${COMMENT_MAX_SYMBOLS}`);
 
-const handlerPristine = (evt) => {
-  evt.preventDefault();
-  pristine.validate();
-};
-
-uploadForm.addEventListener('submit', handlerPristine);
+uploadForm.addEventListener('submit', (evt) => {
+  if(!pristine.validate()){
+    evt.preventDefault();
+  }
+});

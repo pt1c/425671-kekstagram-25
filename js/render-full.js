@@ -12,9 +12,7 @@ const onEscKeydown = (evt) => {
   }
 };
 
-closeButton.addEventListener('click', () => {
-  closeModal();
-});
+closeButton.addEventListener('click', closeModal);
 
 function closeModal() {
   bigPicture.classList.add('hidden');

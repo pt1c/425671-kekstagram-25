@@ -17,9 +17,7 @@ const onEscKeydown = (evt) => {
   }
 };
 
-closeModalButton.addEventListener('click', () => {
-  closeUploadModal();
-});
+closeModalButton.addEventListener('click', closeUploadModal);
 
 function closeUploadModal() {
   uploadModal.classList.add('hidden');
