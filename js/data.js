@@ -71,7 +71,7 @@ const generatePosts = (amount) => {
       url: getRandomUniquePhoto(usedPhotoIds),
       description: getRandomArrayValue(DESCRIPTIONS),
       likes: getRandomInt(15, 200),
-      comments: generateComments(getRandomInt(1, 5))
+      comments: generateComments(getRandomInt(1, 20))
     });
   }
 
