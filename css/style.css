@@ -3,8 +3,7 @@
 
 @font-face {
   font-family: "Open Sans";
-  src: url("../fonts/OpenSansCondensed-Bold.woff2") format("woff2"),
-      url("../fonts/OpenSansCondensed-Bold.woff") format("woff");
+  src: url("../fonts/OpenSansCondensed-Bold.woff2") format("woff2"), url("../fonts/OpenSansCondensed-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -12,8 +11,7 @@
 
 @font-face {
   font-family: "Open Sans";
-  src: url("../fonts/OpenSans-Regular.woff2") format("woff2"),
-      url("../fonts/OpenSans-Regular.woff") format("woff");
+  src: url("../fonts/OpenSans-Regular.woff2") format("woff2"), url("../fonts/OpenSans-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -23,7 +21,7 @@
 *::before,
 *::after {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -43,7 +41,7 @@ main {
 
 .content-box-component {
   -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
 }
 
 .container {
@@ -55,7 +53,6 @@ main {
   height: 100vh;
   overflow: hidden;
 }
-
 
 /**
  * Кнопка закрытия модального окна
@@ -90,10 +87,9 @@ main {
 
 .cancel:active {
   -webkit-transform: translateY(1px);
-      -ms-transform: translateY(1px);
-          transform: translateY(1px);
+  -ms-transform: translateY(1px);
+  transform: translateY(1px);
 }
-
 
 /**
  * Оверлей под экранами
@@ -106,7 +102,7 @@ main {
   z-index: 2;
 
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 
   width: 100%;
   height: 100%;
@@ -115,7 +111,6 @@ main {
 
   background-color: rgba(0, 0, 0, 0.8);
 }
-
 
 /* Блок с фильтрами изображений других пользователей
    ========================================================================== */
@@ -128,8 +123,8 @@ main {
   display: flex;
 
   -webkit-box-pack: center;
-     -ms-flex-pack: center;
-   justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .img-filters--inactive {
@@ -181,7 +176,6 @@ main {
   border-radius: 2px;
 }
 
-
 /* Блок, в котором размещаются фотографии других пользователей
    ========================================================================== */
 
@@ -190,8 +184,8 @@ main {
   display: grid;
   grid-gap: 10px;
 
-  -ms-grid-columns: (1fr)[7];
-      grid-template-columns: repeat(7, 1fr);
+  -ms-grid-columns: (1fr) [7];
+  grid-template-columns: repeat(7, 1fr);
 }
 
 .picture {
@@ -218,8 +212,8 @@ main {
   border-radius: 5px;
 
   -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .picture:hover .picture__info,
@@ -267,7 +261,6 @@ main {
 
   background-position: -5px -31px;
 }
-
 
 /* Поле для загрузки нового изображения
    ========================================================================== */
@@ -349,23 +342,22 @@ main {
   background-position: center;
 
   -webkit-filter: drop-shadow(0 0 10px #943106);
-          filter: drop-shadow(0 0 10px #943106);
+  filter: drop-shadow(0 0 10px #943106);
 }
 
 .img-upload__label:hover::after,
 .img-upload__label:active::after {
   -webkit-filter: drop-shadow(0 0 10px #622104);
-          filter: drop-shadow(0 0 10px #622104);
+  filter: drop-shadow(0 0 10px #622104);
 
   -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-          transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .img-upload__input:focus + .img-upload__label {
   outline: auto 5px highlight;
 }
-
 
 /* Окно для редактирования изображения
    ========================================================================== */
@@ -377,7 +369,7 @@ main {
   z-index: 2;
 
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 
   width: 100%;
   height: 100%;
@@ -393,7 +385,6 @@ main {
   margin-bottom: 30px;
 }
 
-
 /**
  * Кнопки изменения масштаба изобраения
  */
@@ -408,8 +399,8 @@ main {
   font-weight: 400;
 
   -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .scale {
@@ -442,8 +433,8 @@ main {
 
 .scale__control:active {
   -webkit-transform: translateY(1px);
-      -ms-transform: translateY(1px);
-          transform: translateY(1px);
+  -ms-transform: translateY(1px);
+  transform: translateY(1px);
 }
 
 .scale__control--smaller {
@@ -461,8 +452,8 @@ main {
   color: #ffffff;
 
   -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .scale__control--value {
@@ -490,10 +481,9 @@ main {
   color: #ffffff;
 
   -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
-
 
 /**
  * Превью изображения
@@ -504,11 +494,11 @@ main {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-     -ms-flex-align: center;
-        align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-     -ms-flex-pack: center;
-   justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 
   width: 600px;
   height: 600px;
@@ -521,7 +511,6 @@ main {
   max-width: 600px;
   max-height: 600px;
 }
-
 
 /**
  * Шкала регулирования глубины фильтра
@@ -546,8 +535,8 @@ main {
   border-radius: 34px;
 
   -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .effect-level .noUi-target {
@@ -565,7 +554,6 @@ main {
 .effect-level__value {
   display: none;
 }
-
 
 /**
  * Блок с эффектами, которые можно применить к изображению
@@ -587,8 +575,8 @@ main {
   display: flex;
 
   -webkit-box-pack: center;
-     -ms-flex-pack: center;
-   justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 
   list-style: none;
   text-align: center;
@@ -645,29 +633,28 @@ main {
 
 .effects__preview--chrome {
   -webkit-filter: grayscale(1);
-          filter: grayscale(1);
+  filter: grayscale(1);
 }
 
 .effects__preview--sepia {
   -webkit-filter: sepia(1);
-          filter: sepia(1);
+  filter: sepia(1);
 }
 
 .effects__preview--marvin {
   -webkit-filter: invert(100%);
-          filter: invert(100%);
+  filter: invert(100%);
 }
 
 .effects__preview--phobos {
   -webkit-filter: blur(3px);
-          filter: blur(3px);
+  filter: blur(3px);
 }
 
 .effects__preview--heat {
   -webkit-filter: brightness(3);
-          filter: brightness(3);
+  filter: brightness(3);
 }
-
 
 /**
  * Блок добавления хэштегов и комментария к изображению
@@ -710,7 +697,6 @@ main {
   border-radius: 5px;
 }
 
-
 /**
  * Кнопка для отправки изображения
  */
@@ -737,15 +723,14 @@ main {
 
 .img-upload__submit:active {
   -webkit-transform: translateY(1px);
-      -ms-transform: translateY(1px);
-          transform: translateY(1px);
+  -ms-transform: translateY(1px);
+  transform: translateY(1px);
 }
 
 .img-upload__submit:disabled,
 .img-upload__submit--disabled {
   opacity: 0.3;
 }
-
 
 /*
  * Кнопка для закрытия окна редактирования изображения
@@ -759,10 +744,9 @@ main {
 
 .img-upload__cancel:active {
   -webkit-transform: translateY(1px);
-      -ms-transform: translateY(1px);
-          transform: translateY(1px);
+  -ms-transform: translateY(1px);
+  transform: translateY(1px);
 }
-
 
 /* Окно полноэкранного просмотра изображения
    ========================================================================== */
@@ -778,8 +762,8 @@ main {
   padding-bottom: 60px;
 
   -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .big-picture__img img {
@@ -793,8 +777,8 @@ main {
 
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-     -ms-flex-direction: column;
-         flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 
   max-width: 600px;
 
@@ -805,7 +789,6 @@ main {
 
   background-color: #ffffff;
 }
-
 
 /*
  * Подпись к изображению
@@ -819,12 +802,12 @@ main {
   display: flex;
 
   -webkit-box-pack: start;
-     -ms-flex-pack: start;
-   justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 
   -webkit-box-align: center;
-     -ms-flex-align: center;
-        align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 
   border-bottom: 1px solid #cccccc;
 }
@@ -832,7 +815,7 @@ main {
 .social__picture {
   display: block;
   -ms-flex-negative: 0;
-        flex-shrink: 0;
+  flex-shrink: 0;
   margin-right: 15px;
 }
 
@@ -888,14 +871,13 @@ main {
   background-position: -5px -81px;
 }
 
-
 /*
  * Комментарии к изображению
  */
 
 .social__comments {
   -ms-flex-preferred-size: 100%;
-               flex-basis: 100%;
+  flex-basis: 100%;
 
   list-style: none;
 
@@ -914,8 +896,8 @@ main {
   display: flex;
 
   -webkit-box-align: center;
-     -ms-flex-align: center;
-        align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .social__comment-count {
@@ -948,7 +930,6 @@ main {
   margin: 0;
 }
 
-
 /**
  * Спиннер загрузки комментариев и его анимация
  */
@@ -974,31 +955,38 @@ main {
 @keyframes spinner {
   0%,
   100% {
-    box-shadow: 0em -2.6em 0em 0em #3b77c0, 1.8em -1.8em 0 0em rgba(51,102,204, 0.2), 2.5em 0em 0 0em rgba(51,102,204, 0.2), 1.75em 1.75em 0 0em rgba(51,102,204, 0.2), 0em 2.5em 0 0em rgba(51,102,204, 0.2), -1.8em 1.8em 0 0em rgba(51,102,204, 0.2), -2.6em 0em 0 0em rgba(51,102,204, 0.5), -1.8em -1.8em 0 0em rgba(51,102,204, 0.7);
+    box-shadow: 0em -2.6em 0em 0em #3b77c0, 1.8em -1.8em 0 0em rgba(51, 102, 204, 0.2), 2.5em 0em 0 0em rgba(51, 102, 204, 0.2), 1.75em 1.75em 0 0em rgba(51, 102, 204, 0.2), 0em 2.5em 0 0em rgba(51, 102, 204, 0.2),
+      -1.8em 1.8em 0 0em rgba(51, 102, 204, 0.2), -2.6em 0em 0 0em rgba(51, 102, 204, 0.5), -1.8em -1.8em 0 0em rgba(51, 102, 204, 0.7);
   }
   12.5% {
-    box-shadow: 0em -2.6em 0em 0em rgba(51,102,204, 0.7), 1.8em -1.8em 0 0em #3b77c0, 2.5em 0em 0 0em rgba(51,102,204, 0.2), 1.75em 1.75em 0 0em rgba(51,102,204, 0.2), 0em 2.5em 0 0em rgba(51,102,204, 0.2), -1.8em 1.8em 0 0em rgba(51,102,204, 0.2), -2.6em 0em 0 0em rgba(51,102,204, 0.2), -1.8em -1.8em 0 0em rgba(51,102,204, 0.5);
+    box-shadow: 0em -2.6em 0em 0em rgba(51, 102, 204, 0.7), 1.8em -1.8em 0 0em #3b77c0, 2.5em 0em 0 0em rgba(51, 102, 204, 0.2), 1.75em 1.75em 0 0em rgba(51, 102, 204, 0.2), 0em 2.5em 0 0em rgba(51, 102, 204, 0.2),
+      -1.8em 1.8em 0 0em rgba(51, 102, 204, 0.2), -2.6em 0em 0 0em rgba(51, 102, 204, 0.2), -1.8em -1.8em 0 0em rgba(51, 102, 204, 0.5);
   }
   25% {
-    box-shadow: 0em -2.6em 0em 0em rgba(51,102,204, 0.5), 1.8em -1.8em 0 0em rgba(51,102,204, 0.7), 2.5em 0em 0 0em #3b77c0, 1.75em 1.75em 0 0em rgba(51,102,204, 0.2), 0em 2.5em 0 0em rgba(51,102,204, 0.2), -1.8em 1.8em 0 0em rgba(51,102,204, 0.2), -2.6em 0em 0 0em rgba(51,102,204, 0.2), -1.8em -1.8em 0 0em rgba(51,102,204, 0.2);
+    box-shadow: 0em -2.6em 0em 0em rgba(51, 102, 204, 0.5), 1.8em -1.8em 0 0em rgba(51, 102, 204, 0.7), 2.5em 0em 0 0em #3b77c0, 1.75em 1.75em 0 0em rgba(51, 102, 204, 0.2), 0em 2.5em 0 0em rgba(51, 102, 204, 0.2),
+      -1.8em 1.8em 0 0em rgba(51, 102, 204, 0.2), -2.6em 0em 0 0em rgba(51, 102, 204, 0.2), -1.8em -1.8em 0 0em rgba(51, 102, 204, 0.2);
   }
   37.5% {
-    box-shadow: 0em -2.6em 0em 0em rgba(51,102,204, 0.2), 1.8em -1.8em 0 0em rgba(51,102,204, 0.5), 2.5em 0em 0 0em rgba(51,102,204, 0.7), 1.75em 1.75em 0 0em #3b77c0, 0em 2.5em 0 0em rgba(51,102,204, 0.2), -1.8em 1.8em 0 0em rgba(51,102,204, 0.2), -2.6em 0em 0 0em rgba(51,102,204, 0.2), -1.8em -1.8em 0 0em rgba(51,102,204, 0.2);
+    box-shadow: 0em -2.6em 0em 0em rgba(51, 102, 204, 0.2), 1.8em -1.8em 0 0em rgba(51, 102, 204, 0.5), 2.5em 0em 0 0em rgba(51, 102, 204, 0.7), 1.75em 1.75em 0 0em #3b77c0, 0em 2.5em 0 0em rgba(51, 102, 204, 0.2),
+      -1.8em 1.8em 0 0em rgba(51, 102, 204, 0.2), -2.6em 0em 0 0em rgba(51, 102, 204, 0.2), -1.8em -1.8em 0 0em rgba(51, 102, 204, 0.2);
   }
   50% {
-    box-shadow: 0em -2.6em 0em 0em rgba(51,102,204, 0.2), 1.8em -1.8em 0 0em rgba(51,102,204, 0.2), 2.5em 0em 0 0em rgba(51,102,204, 0.5), 1.75em 1.75em 0 0em rgba(51,102,204, 0.7), 0em 2.5em 0 0em #3b77c0, -1.8em 1.8em 0 0em rgba(51,102,204, 0.2), -2.6em 0em 0 0em rgba(51,102,204, 0.2), -1.8em -1.8em 0 0em rgba(51,102,204, 0.2);
+    box-shadow: 0em -2.6em 0em 0em rgba(51, 102, 204, 0.2), 1.8em -1.8em 0 0em rgba(51, 102, 204, 0.2), 2.5em 0em 0 0em rgba(51, 102, 204, 0.5), 1.75em 1.75em 0 0em rgba(51, 102, 204, 0.7), 0em 2.5em 0 0em #3b77c0,
+      -1.8em 1.8em 0 0em rgba(51, 102, 204, 0.2), -2.6em 0em 0 0em rgba(51, 102, 204, 0.2), -1.8em -1.8em 0 0em rgba(51, 102, 204, 0.2);
   }
   62.5% {
-    box-shadow: 0em -2.6em 0em 0em rgba(51,102,204, 0.2), 1.8em -1.8em 0 0em rgba(51,102,204, 0.2), 2.5em 0em 0 0em rgba(51,102,204, 0.2), 1.75em 1.75em 0 0em rgba(51,102,204, 0.5), 0em 2.5em 0 0em rgba(51,102,204, 0.7), -1.8em 1.8em 0 0em #3b77c0, -2.6em 0em 0 0em rgba(51,102,204, 0.2), -1.8em -1.8em 0 0em rgba(51,102,204, 0.2);
+    box-shadow: 0em -2.6em 0em 0em rgba(51, 102, 204, 0.2), 1.8em -1.8em 0 0em rgba(51, 102, 204, 0.2), 2.5em 0em 0 0em rgba(51, 102, 204, 0.2), 1.75em 1.75em 0 0em rgba(51, 102, 204, 0.5), 0em 2.5em 0 0em rgba(51, 102, 204, 0.7),
+      -1.8em 1.8em 0 0em #3b77c0, -2.6em 0em 0 0em rgba(51, 102, 204, 0.2), -1.8em -1.8em 0 0em rgba(51, 102, 204, 0.2);
   }
   75% {
-    box-shadow: 0em -2.6em 0em 0em rgba(51,102,204, 0.2), 1.8em -1.8em 0 0em rgba(51,102,204, 0.2), 2.5em 0em 0 0em rgba(51,102,204, 0.2), 1.75em 1.75em 0 0em rgba(51,102,204, 0.2), 0em 2.5em 0 0em rgba(51,102,204, 0.5), -1.8em 1.8em 0 0em rgba(51,102,204, 0.7), -2.6em 0em 0 0em #3b77c0, -1.8em -1.8em 0 0em rgba(51,102,204, 0.2);
+    box-shadow: 0em -2.6em 0em 0em rgba(51, 102, 204, 0.2), 1.8em -1.8em 0 0em rgba(51, 102, 204, 0.2), 2.5em 0em 0 0em rgba(51, 102, 204, 0.2), 1.75em 1.75em 0 0em rgba(51, 102, 204, 0.2), 0em 2.5em 0 0em rgba(51, 102, 204, 0.5),
+      -1.8em 1.8em 0 0em rgba(51, 102, 204, 0.7), -2.6em 0em 0 0em #3b77c0, -1.8em -1.8em 0 0em rgba(51, 102, 204, 0.2);
   }
   87.5% {
-    box-shadow: 0em -2.6em 0em 0em rgba(51,102,204, 0.2), 1.8em -1.8em 0 0em rgba(51,102,204, 0.2), 2.5em 0em 0 0em rgba(51,102,204, 0.2), 1.75em 1.75em 0 0em rgba(51,102,204, 0.2), 0em 2.5em 0 0em rgba(51,102,204, 0.2), -1.8em 1.8em 0 0em rgba(51,102,204, 0.5), -2.6em 0em 0 0em rgba(51,102,204, 0.7), -1.8em -1.8em 0 0em #3b77c0;
+    box-shadow: 0em -2.6em 0em 0em rgba(51, 102, 204, 0.2), 1.8em -1.8em 0 0em rgba(51, 102, 204, 0.2), 2.5em 0em 0 0em rgba(51, 102, 204, 0.2), 1.75em 1.75em 0 0em rgba(51, 102, 204, 0.2), 0em 2.5em 0 0em rgba(51, 102, 204, 0.2),
+      -1.8em 1.8em 0 0em rgba(51, 102, 204, 0.5), -2.6em 0em 0 0em rgba(51, 102, 204, 0.7), -1.8em -1.8em 0 0em #3b77c0;
   }
 }
-
 
 /*
  * Форма для отправки комментария
@@ -1055,8 +1043,8 @@ main {
   opacity: 0.6;
 
   -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 
   border: none;
 }
@@ -1071,7 +1059,6 @@ main {
   opacity: 1;
   background-position: -5px -149px;
 }
-
 
 /* Подвал сайта
    ========================================================================== */
@@ -1088,14 +1075,13 @@ main {
   display: flex;
 
   -webkit-box-align: start;
-     -ms-flex-align: start;
-        align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 
   -webkit-box-pack: justify;
-     -ms-flex-pack: justify;
-   justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
-
 
 /*
  * Копирайт Академии
@@ -1122,7 +1108,6 @@ main {
 .page-footer__contacts {
   background-color: inherit;
 }
-
 
 /*
  * Ссылки на социальные сети
@@ -1175,7 +1160,6 @@ main {
   background-position: -5px -309px;
 }
 
-
 /* Экраны с сообщениями для пользователя
    ========================================================================== */
 
@@ -1200,13 +1184,13 @@ main {
   transform: translateX(-50%);
 }
 
-
 /**
  * Экраны ошибки и успеха загрузки изображения
  */
 
 .error,
-.success {
+.success,
+.fetch-error {
   position: fixed;
   display: flex;
   justify-content: center;
@@ -1222,7 +1206,8 @@ main {
 }
 
 .error__inner,
-.success__inner {
+.success__inner,
+.fetch-error__inner {
   position: relative;
   width: 600px;
   padding: 50px 20px;
@@ -1244,12 +1229,18 @@ main {
   border-radius: 10px;
 }
 
+.fetch-error__inner {
+  color: #ff5353;
+  background-color: #3c1414;
+}
+
 .success__inner {
   padding: 100px 20px;
   padding-bottom: 75px;
 }
 
-.error__title {
+.error__title,
+.fetch-error__title {
   position: relative;
 
   margin: 0;
@@ -1265,7 +1256,8 @@ main {
   font-size: 32px;
 }
 
-.error__title::before {
+.error__title::before,
+.fetch-error__title::before {
   content: "";
   position: absolute;
 
@@ -1278,8 +1270,8 @@ main {
   background-image: url("../img/icon-warning.svg");
 
   -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .error__button,
@@ -1306,7 +1298,6 @@ main {
   opacity: 0.6;
 }
 
-
 /**
  * Экран загрузки изображения
  */
@@ -1323,8 +1314,8 @@ main {
   background-color: #8a7d2d;
 
   -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .img-upload__message--loading::after {
@@ -1339,10 +1330,9 @@ main {
   background-color: #ffe753;
 
   -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
-
 
 /* Адаптивности чуток
    ========================================================================== */
@@ -1359,7 +1349,7 @@ main {
   }
 
   .pictures {
-    -ms-grid-columns: (1fr)[5];
+    -ms-grid-columns: (1fr) [5];
     grid-template-columns: repeat(5, 1fr);
   }
 
@@ -1380,7 +1370,7 @@ main {
   }
 
   .pictures {
-    -ms-grid-columns: (1fr)[3];
+    -ms-grid-columns: (1fr) [3];
     grid-template-columns: repeat(3, 1fr);
   }
 
@@ -1407,7 +1397,7 @@ main {
   white-space: nowrap;
 
   -webkit-clip-path: inset(100%);
-          clip-path: inset(100%);
+  clip-path: inset(100%);
 
   clip: rect(0 0 0 0);
   overflow: hidden;
@@ -1415,4 +1405,20 @@ main {
 
 .hidden {
   display: none;
+}
+
+.input-wrapper-error {
+  display: block;
+  margin: -15px auto 10px;
+  width: 450px;
+  text-transform: none;
+  font-size: 12px;
+  background-color: rgba(255, 0, 0, 0.5);
+  color: #ffffff;
+  border-radius: 10px;
+  border: 1px dashed #ff0000;
+}
+
+.text__description + .input-wrapper-error {
+  margin: 0 auto;
 }

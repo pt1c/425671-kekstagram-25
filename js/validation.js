@@ -72,8 +72,6 @@ pristine.addValidator(textHashtags, validateHashtagsUnique, 'У вас хэш-т
 pristine.addValidator(textHashtags, validateHashtagsNumber, `Слишком много хэш-тегов. (Не больше ${HASHTAG_MAX_NUMBER})`);
 pristine.addValidator(textDescription, validateCommentSymbols, `Максимальное количество символов в комментарии = ${COMMENT_MAX_SYMBOLS}`);
 
-uploadForm.addEventListener('submit', (evt) => {
-  if(!pristine.validate()){
-    evt.preventDefault();
-  }
-});
+const validateForm = () => pristine.validate();
+
+export { validateForm };
