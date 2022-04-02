@@ -1,13 +1,3 @@
-const getRandomInt = (from, to) => {
-  if (to < from) {
-    [from, to] = [to, from];
-  }
-
-  return Math.floor(Math.random() * (to - from + 1) + from);
-};
-
-const checkMaxStringLength = (inputString, maxLenght) => inputString.length <= maxLenght;
-
 const isEscapeKey = (evt) => evt.key === 'Escape';
 
 const stopEscapePropagation = (evt) => {
@@ -16,4 +6,4 @@ const stopEscapePropagation = (evt) => {
   }
 };
 
-export { getRandomInt, checkMaxStringLength, isEscapeKey, stopEscapePropagation };
+export { isEscapeKey, stopEscapePropagation };
