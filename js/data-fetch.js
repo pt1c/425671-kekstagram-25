@@ -4,14 +4,14 @@ import { ENDPOINT_FETCH, ENDPOINT_SEND } from './const.js';
 const fetchData = (successCallback, failCallback, url = ENDPOINT_FETCH) => {
   fetch(url)
     .then((response) => {
-      if (response.ok) {
-        return response;
+      if (!response.ok) {
+        throw new Error(`${response.status} — ${response.statusText}`);
       }
-      throw new Error(`${response.status} — ${response.statusText}`);
+      return response;
     })
     .then((response) => response.json())
-    .then((data) => successCallback(data))
-    .catch((error) => failCallback(error));
+    .then(successCallback)
+    .catch(failCallback);
 };
 
 //отправляет данные на сервер
@@ -22,13 +22,14 @@ const sendData = (successCallback, failCallback, body, url = ENDPOINT_SEND) => {
       body
     })
     .then((response) => {
-      if (response.ok) {
-        return response.json();
+      if (!response.ok) {
+        throw new Error(`${response.status} — ${response.statusText}`);
       }
-      throw new Error(`${response.status} — ${response.statusText}`);
+      //return response.json();
+      return response.text();
     })
-    .then((response) => successCallback(JSON.stringify(response)))
-    .catch((error) => failCallback(error));
+    .then(successCallback)
+    .catch(failCallback);
 };
 
 export { fetchData, sendData };

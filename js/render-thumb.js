@@ -1,5 +1,5 @@
 
-const renderThumb = (data) => {
+const renderThumbs = (data) => {
   const templateData = document.querySelector('#picture').content;
   const pictures = document.querySelector('.pictures');
   const fragment = document.createDocumentFragment();
@@ -23,4 +23,4 @@ const renderThumb = (data) => {
   pictures.appendChild(fragment);
 };
 
-export { renderThumb };
+export { renderThumbs };
