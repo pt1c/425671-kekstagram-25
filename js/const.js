@@ -12,6 +12,8 @@ const SCALER_MAX = 100;
 const SCALER_STEP = 25;
 const ENDPOINT_FETCH = 'https://25.javascript.pages.academy/kekstagram/data';
 const ENDPOINT_SEND = 'https://25.javascript.pages.academy/kekstagram';
+const FILTERED_THUMBS = 10;
+const DEBOUNCE_DELAY = 500;
 
 export {
   DEBUG,
@@ -27,5 +29,7 @@ export {
   SCALER_MAX,
   SCALER_STEP,
   ENDPOINT_FETCH,
-  ENDPOINT_SEND
+  ENDPOINT_SEND,
+  FILTERED_THUMBS,
+  DEBOUNCE_DELAY
 };
