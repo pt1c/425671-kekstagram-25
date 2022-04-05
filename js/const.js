@@ -14,6 +14,7 @@ const ENDPOINT_FETCH = 'https://25.javascript.pages.academy/kekstagram/data';
 const ENDPOINT_SEND = 'https://25.javascript.pages.academy/kekstagram';
 const FILTERED_THUMBS = 10;
 const DEBOUNCE_DELAY = 500;
+const ALOWED_FILETYPES = ['jpg', 'jpeg', 'png'];
 
 export {
   DEBUG,
@@ -31,5 +32,6 @@ export {
   ENDPOINT_FETCH,
   ENDPOINT_SEND,
   FILTERED_THUMBS,
-  DEBOUNCE_DELAY
+  DEBOUNCE_DELAY,
+  ALOWED_FILETYPES
 };
