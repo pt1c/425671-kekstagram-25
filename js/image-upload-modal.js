@@ -1,3 +1,4 @@
+import { ALOWED_FILETYPES } from './const.js';
 import { isEscapeKey, stopEscapePropagation } from './util.js';
 import { effectsHandler, resetSlider, effectsList } from './image-effects.js';
 import { scaleHandler, resetScaler } from './image-scale.js';
@@ -55,7 +56,6 @@ function resetUploadForm(){
 }
 
 uploadControl.addEventListener('change', () => {
-  openUploadModal();
   changeUploadedImage();
 });
 
@@ -65,12 +65,17 @@ textDescription.addEventListener('keydown', stopEscapePropagation);
 /* подстановка изображения */
 function changeUploadedImage() {
   const imageFile = uploadControl.files[0];
+  const fileExtension = imageFile.name.split('.').pop().toLowerCase();
 
-  const  fileReader = new FileReader();
-  fileReader.readAsDataURL(imageFile);
-  fileReader.addEventListener('load', () => {
-    document.querySelector('.img-upload__preview img').src = fileReader.result;
-  });
+  if (ALOWED_FILETYPES.includes(fileExtension)){
+    const  fileReader = new FileReader();
+    fileReader.readAsDataURL(imageFile);
+    fileReader.addEventListener('load', () => {
+      document.querySelector('.img-upload__preview img').src = fileReader.result;
+    });
+
+    openUploadModal();
+  }
 }
 
 /* хендлер для "отправить" */
