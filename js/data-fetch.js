@@ -1,6 +1,5 @@
 import { ENDPOINT_FETCH, ENDPOINT_SEND } from './const.js';
 
-// получает данные с сервера
 const fetchData = (successCallback, failCallback, url = ENDPOINT_FETCH) => {
   fetch(url)
     .then((response) => {
@@ -14,7 +13,6 @@ const fetchData = (successCallback, failCallback, url = ENDPOINT_FETCH) => {
     .catch(failCallback);
 };
 
-//отправляет данные на сервер
 const sendData = (successCallback, failCallback, body, url = ENDPOINT_SEND) => {
   fetch(url,
     {
@@ -25,7 +23,6 @@ const sendData = (successCallback, failCallback, body, url = ENDPOINT_SEND) => {
       if (!response.ok) {
         throw new Error(`${response.status} — ${response.statusText}`);
       }
-      //return response.json();
       return response.text();
     })
     .then(successCallback)

@@ -27,7 +27,6 @@ const renderFilteredThumbs = (data) => {
       return;
     }
 
-    //переносим выделение на кнопку по которой был клик
     const activeButton = document.querySelector('.img-filters__button--active');
     activeButton.classList.remove('img-filters__button--active');
     evt.target.classList.add('img-filters__button--active');
