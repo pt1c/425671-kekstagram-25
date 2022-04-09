@@ -10,7 +10,7 @@ const scaleControlValue = document.querySelector('.scale__control--value');
 let scaleValue = SCALER_MAX;
 
 const setScale = (value) => {
-  scaleControlValue.value = value;
+  scaleControlValue.value = `${value}%`;
   imagePreview.style.transform = `scale(${(value / 100)})`;
 };
 
@@ -36,6 +36,5 @@ const scaleHandler = (evt) => {
   }
   setScale(scaleValue);
 };
-
 
 export { scaleHandler, resetScaler };

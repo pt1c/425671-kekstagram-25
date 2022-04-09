@@ -2,7 +2,7 @@ import { ALOWED_FILETYPES } from './const.js';
 import { isEscapeKey, stopEscapePropagation } from './util.js';
 import { effectsHandler, resetSlider, effectsList } from './image-effects.js';
 import { scaleHandler, resetScaler } from './image-scale.js';
-import { validateForm } from './validation.js'; // based on Pristine
+import { validateForm } from './validation.js';
 import { sendData } from './data-fetch.js';
 import { showSendSuccess, showSendError } from './modal-messages.js';
 
@@ -23,7 +23,6 @@ const onEscKeydown = (evt) => {
   }
 };
 
-/* блок / анблок кнопки */
 const imageUploadSubmit = document.querySelector('.img-upload__submit');
 const disableSubmitButton = () => { imageUploadSubmit.disabled = true; };
 const enableSubmitButton = () => { imageUploadSubmit.disabled = false; };
@@ -34,8 +33,8 @@ function closeUploadModal() {
   uploadModal.classList.add('hidden');
   document.body.classList.remove('modal-open');
   document.removeEventListener('keydown', onEscKeydown);
-  effectsList.removeEventListener('change', effectsHandler); //эффекты из effects.js
-  imageUploadScale.removeEventListener('click', scaleHandler); //скейлер
+  effectsList.removeEventListener('change', effectsHandler);
+  imageUploadScale.removeEventListener('click', scaleHandler);
   resetUploadForm();
 }
 
@@ -43,17 +42,18 @@ function openUploadModal() {
   uploadModal.classList.remove('hidden');
   document.body.classList.add('modal-open');
   document.addEventListener('keydown', onEscKeydown);
-  effectsList.addEventListener('change', effectsHandler); //эффекты из effects.js
-  imageUploadScale.addEventListener('click', scaleHandler); //скейлер
+  effectsList.addEventListener('change', effectsHandler);
+  imageUploadScale.addEventListener('click', scaleHandler);
   uploadForm.addEventListener('submit', submitFormHandler);
 }
 
 function resetUploadForm(){
-  uploadForm.reset(); //cкидывает поля формы
-  resetSlider(); //скидывает эффекты
-  resetScaler(); //скидывает скейлер
+  uploadForm.reset();
+  resetSlider();
+  resetScaler();
   uploadControl.value = '';
 }
+resetUploadForm();
 
 uploadControl.addEventListener('change', () => {
   changeUploadedImage();
@@ -84,13 +84,13 @@ function submitFormHandler(evt) {
   if(validateForm()){
     disableSubmitButton();
     sendData(
-      (data) => {
-        showSendSuccess(data);
+      () => {
+        showSendSuccess();
         closeUploadModal();
         enableSubmitButton();
       },
-      (data) => {
-        showSendError(data);
+      () => {
+        showSendError();
         closeUploadModal();
         enableSubmitButton();
       },
