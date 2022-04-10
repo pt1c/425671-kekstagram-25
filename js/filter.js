@@ -2,7 +2,7 @@ import { FILTERED_THUMBS } from './const.js';
 import { debounce, shuffle } from './util.js';
 import { renderThumbs } from './render-thumb.js';
 
-const filtersElement = document.querySelector('.img-filters');
+const imageFilters = document.querySelector('.img-filters');
 
 
 const removePictures = () => {
@@ -35,8 +35,8 @@ const renderFilteredThumbs = (data) => {
     renderThumbs(filters[evt.target.id](data));
   };
 
-  filtersElement.addEventListener('click', debounce(filtersHandler));
-  filtersElement.classList.remove('img-filters--inactive');
+  imageFilters.addEventListener('click', debounce(filtersHandler));
+  imageFilters.classList.remove('img-filters--inactive');
 
   renderThumbs(data);
 };
