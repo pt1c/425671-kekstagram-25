@@ -28,7 +28,7 @@ const validateHashtagsOnlyHash = (value) => (
 );
 
 const validateHashtagsLength = (value) => (
-  breakStringToWords(value).every((tag) => (tag.length >= HASHTAG_MIN_SYMBOLS + 1 && tag.length <= HASHTAG_MAX_SYMBOLS + 1))
+  breakStringToWords(value).every((tag) => (tag.length >= HASHTAG_MIN_SYMBOLS && tag.length <= HASHTAG_MAX_SYMBOLS))
 );
 
 const validateHashtagsUnique = (value) => {

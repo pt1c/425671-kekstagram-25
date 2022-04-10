@@ -27,14 +27,13 @@ const imageUploadSubmit = document.querySelector('.img-upload__submit');
 const disableSubmitButton = () => { imageUploadSubmit.disabled = true; };
 const enableSubmitButton = () => { imageUploadSubmit.disabled = false; };
 
-closeModalButton.addEventListener('click', closeUploadModal);
-
 function closeUploadModal() {
   uploadModal.classList.add('hidden');
   document.body.classList.remove('modal-open');
   document.removeEventListener('keydown', onEscKeydown);
   effectsList.removeEventListener('change', effectsHandler);
   imageUploadScale.removeEventListener('click', scaleHandler);
+  closeModalButton.removeEventListener('click', closeUploadModal);
   resetUploadForm();
 }
 
@@ -45,6 +44,7 @@ function openUploadModal() {
   effectsList.addEventListener('change', effectsHandler);
   imageUploadScale.addEventListener('click', scaleHandler);
   uploadForm.addEventListener('submit', submitFormHandler);
+  closeModalButton.addEventListener('click', closeUploadModal);
 }
 
 function resetUploadForm(){

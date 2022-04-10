@@ -5,7 +5,7 @@ import { isEscapeKey } from './util.js';
 const picture = document.querySelector('.pictures');
 const bigPicture = document.querySelector('.big-picture');
 const closeButton = bigPicture.querySelector('#picture-cancel');
-const commentsElement = bigPicture.querySelector('.social__comments');
+const socialComments = bigPicture.querySelector('.social__comments');
 const commentsLoader = bigPicture.querySelector('.comments-loader');
 
 let commentsOpened = 0;
@@ -59,7 +59,7 @@ const renderCommentsBlock = () => {
   const commentsToOpen = postComments.slice(commentsOpened, commentsOpened + COMMENTS_PER_PAGE);
 
   commentsToOpen.forEach((comment) => {
-    commentsElement.append(renderOneComment(comment));
+    socialComments.append(renderOneComment(comment));
   });
   commentsOpened += commentsToOpen.length;
 
@@ -89,7 +89,7 @@ const renderFull = (data) => {
     bigPicture.querySelector('.comments-count').textContent = clickedPost.comments.length;
     bigPicture.querySelector('.social__caption').textContent = clickedPost.description;
 
-    commentsElement.innerHTML = '';
+    socialComments.innerHTML = '';
     postComments = clickedPost.comments;
     renderCommentsBlock();
 

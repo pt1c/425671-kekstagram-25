@@ -1,42 +1,64 @@
 import { isEscapeKey } from './util.js';
 
-const errorFetchElement = document.querySelector('#fetch-error').content.querySelector('.fetch-error').cloneNode(true);
-const successElement = document.querySelector('#success').content.querySelector('.success').cloneNode(true);
-const successElementButton = successElement.querySelector('.success__button');
-const errorElement = document.querySelector('#error').content.querySelector('.error').cloneNode(true);
-const errorElementButton = errorElement.querySelector('.error__button');
+const errorFetch = document.querySelector('#fetch-error').content.querySelector('.fetch-error').cloneNode(true);
+const successModal = document.querySelector('#success').content.querySelector('.success').cloneNode(true);
+const successButton = successModal.querySelector('.success__button');
+const errorModal = document.querySelector('#error').content.querySelector('.error').cloneNode(true);
+const errorButton = errorModal.querySelector('.error__button');
 
 const showFetchError = (error) => {
-  document.body.append(errorFetchElement);
-  errorFetchElement.querySelector('.fetch-error__details').textContent = error;
+  document.body.append(errorFetch);
+  errorFetch.querySelector('.fetch-error__details').textContent = error;
 };
 
-const removeSendSuccess = (evt) => {
-  if (isEscapeKey(evt) || (evt.type === 'click' && (evt.target === successElementButton || evt.target === successElement))) {
-    document.removeEventListener('click', removeSendSuccess);
-    document.removeEventListener('keydown', removeSendSuccess);
-    successElement.remove();
-  }
+const removeSendSuccess = () => {
+  document.removeEventListener('click', sendSuccessClickHandler);
+  document.removeEventListener('keydown', sendSuccessKeyDownHandler);
+  successModal.remove();
 };
+
+function sendSuccessClickHandler(evt) {
+  if (evt.target === successButton || evt.target === successModal) {
+    removeSendSuccess();
+  }
+}
+
+function sendSuccessKeyDownHandler(evt) {
+  if (isEscapeKey(evt)) {
+    evt.preventDefault();
+    removeSendSuccess();
+  }
+}
 
 const showSendSuccess = () => {
-  document.body.append(successElement);
-  document.addEventListener('click', removeSendSuccess);
-  document.addEventListener('keydown', removeSendSuccess);
+  document.body.append(successModal);
+  document.addEventListener('click',sendSuccessClickHandler);
+  document.addEventListener('keydown', sendSuccessKeyDownHandler);
 };
 
-const removeSendError = (evt) => {
-  if (isEscapeKey(evt) || (evt.type === 'click' && (evt.target === errorElementButton || evt.target === errorElement))) {
-    document.removeEventListener('click', removeSendError);
-    document.removeEventListener('keydown', removeSendError);
-    errorElement.remove();
-  }
+const removeSendError = () => {
+  document.removeEventListener('click', sendErrorClickHandler);
+  document.removeEventListener('keydown',sendErrorKeyDownHandler);
+  errorModal.remove();
 };
+
+function sendErrorClickHandler(evt) {
+  if (evt.target === errorButton || evt.target === errorModal) {
+    removeSendError();
+  }
+}
+
+function sendErrorKeyDownHandler(evt) {
+  if (isEscapeKey(evt)) {
+    evt.preventDefault();
+    removeSendError();
+  }
+}
 
 const showSendError = () => {
-  document.body.append(errorElement);
-  document.addEventListener('click', removeSendError);
-  document.addEventListener('keydown', removeSendError);
+  document.body.append(errorModal);
+  document.addEventListener('click', sendErrorClickHandler);
+  document.addEventListener('keydown', sendErrorKeyDownHandler);
 };
 
 
